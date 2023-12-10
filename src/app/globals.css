@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .sumit {
+        @apply mr-10 text-blue-200 border-l-red-100;
+    }
+}
