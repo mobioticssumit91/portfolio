@@ -2,14 +2,14 @@
 import Image from 'next/image'
 import React, { useState, useEffect  } from 'react'; 
 
-export default function Listing(props) {
+export default function Listing(props: any) {
     const [count, setCount] = useState([]); // <--- useState is the hook
 
     useEffect(() => {
         callAPI(props.typeSection);
     },[props.typeSection])
     console.log(props.typeSection)
-    const callAPI = async (typeSection) => {
+    const callAPI = async (typeSection: string) => {
       let url = ""
       if (typeSection == 'Trending') {
         typeSection = 'https://pineapple-tree-default-rtdb.firebaseio.com/v1/trending.json'
