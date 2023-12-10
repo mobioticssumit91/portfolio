@@ -37,7 +37,7 @@ export default function Listing(props: any) {
      
         {
          
-         count.length == 0 ? (<h1 className='text-xl text-white'>LOADING .....</h1>) : count.map((item, index) => {
+         count.length == 0 ? (<h1 className='text-xl text-white'>LOADING .....</h1>) : count.map((item: any, index:number) => {
               return (
                 <div className='w-30' key={index}> <img src={'https://image.tmdb.org/t/p/w500' + item.poster_path} /> <div className='text-blue-200'>  { item.title } </div></div>
               )   

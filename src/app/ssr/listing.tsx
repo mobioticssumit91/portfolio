@@ -10,7 +10,7 @@ export default function Listing(props: any) {
      
         {
          
-         flim.length == 0 ? (<h1 className='text-xl text-white'>LOADING .....</h1>) : flim.map((item, index) => {
+         flim.length == 0 ? (<h1 className='text-xl text-white'>LOADING .....</h1>) : flim.map((item: any, index: number) => {
               return (
                 <div className='w-30' key={index}> <Image alt={item.poster_path} src={'https://image.tmdb.org/t/p/w500' + item.poster_path} 
                 loading="lazy" width={200} height={300}/> <div className='text-blue-200'>  { item.title } </div></div>
