@@ -1,6 +1,8 @@
 'use server'
 import Image from 'next/image'
 import Listing from '../listing'
+import { userStore } from '../../../../zustand/user'
+import { localDB } from '../../../../zustand/db'
 
 async function fetchflim() {
   const flimResponse = await fetch("https://pineapple-tree-default-rtdb.firebaseio.com/v1/trending.json", {
@@ -20,7 +22,9 @@ async function fetchflim() {
 
 export default async function Trending (props: any) {
   const flim = await fetchflim();
-  console.log(  flim.length)
+  console.log(  "=====",   userStore.getState().user)
+  console.log("age====", localDB.age)
+  
   return (
   <section>
     <div>Trending</div>

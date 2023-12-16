@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import HeaderSSR from './ssr/header'
 import Header from './header'
-import Context from "../../context/context"
+// import Context from "../../context/context"
 
 
 export const metadata: Metadata = {
@@ -20,11 +20,11 @@ export default function RootLayout({
     <html lang="en">
 
       <body className='bg-zinc-700 md:mx-2 mx-5'>
-        <Context>
+        {/* <Context> */}
           <Header></Header>
           <HeaderSSR></HeaderSSR>
           {children}
-        </Context>
+        {/* </Context> */}
      
       </body>
     </html>

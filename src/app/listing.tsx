@@ -1,10 +1,10 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect  } from 'react'; 
-
+import Card from '@/app/child/card'
 export default function Listing(props: any) {
     const [count, setCount] = useState([]); // <--- useState is the hook
-
+ 
     useEffect(() => {
         callAPI(props.typeSection);
     },[props.typeSection])
@@ -38,9 +38,7 @@ export default function Listing(props: any) {
         {
          
          count.length == 0 ? (<h1 className='text-xl text-white'>LOADING .....</h1>) : count.map((item: any, index:number) => {
-              return (
-                <div className='w-30' key={index}> <img src={'https://image.tmdb.org/t/p/w500' + item.poster_path} /> <div className='text-blue-200'>  { item.title } </div></div>
-              )   
+             return <Card film={item}></Card> 
           })
         }
     </div>

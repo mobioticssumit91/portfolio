@@ -9,11 +9,15 @@ async function fetchflim() {
     // next: {
     //   revalidate: 20, ///< ISR revalidate
     // },
+    headers: {
+      "Content-Type": "application/json",
+     "session": "12345"
+    },
   });
 
   // await wait(4000);
 
-  console.log("fetching flim");
+  console.log("fetching flim", flimResponse);
 
   return flimResponse.json();
 }
