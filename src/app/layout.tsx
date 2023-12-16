@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import HeaderSSR from './ssr/header'
 import Header from './header'
+import Context from "../../context/context"
 
 
 export const metadata: Metadata = {
@@ -17,10 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+
       <body className='bg-zinc-700 md:mx-2 mx-5'>
-        <Header></Header>
-        <HeaderSSR></HeaderSSR>
-        {children}
+        <Context>
+          <Header></Header>
+          <HeaderSSR></HeaderSSR>
+          {children}
+        </Context>
+     
       </body>
     </html>
   )
