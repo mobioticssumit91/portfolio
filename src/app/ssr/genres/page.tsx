@@ -1,8 +1,13 @@
 'use server'
 import Image from 'next/image'
 import Listing from '../listing'
+import { getServerSession } from 'next-auth';
 
 async function fetchflim() {
+  const session = await getServerSession();
+
+
+  console.log(session, "token=========")
   const flimResponse = await fetch("https://pineapple-tree-default-rtdb.firebaseio.com/v1/genres.json", {
     // cache: "force-cache", ///< SSG getStaticSideProps
     cache: "no-store", ///< SSR getServerSideProps
@@ -17,7 +22,7 @@ async function fetchflim() {
 
   // await wait(4000);
 
-  console.log("fetching flim", flimResponse);
+  
 
   return flimResponse.json();
 }

@@ -9,7 +9,7 @@ export default function Header() {
             <ul className='flex'>
                 
              {items.map((item, index) => {
-                return ( <li className='mr-6 text-blue-200' key={index}> <Link href={item.link}> { item.title } </Link> </li>)
+                return ( <li className='mr-6 text-blue-200 font-sans' key={index}> <Link href={item.link}> { item.title } </Link> </li>)
              })}
             </ul>
         </div>

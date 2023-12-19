@@ -8,6 +8,7 @@ const config: Config = {
   ],
   darkMode: 'class',
   theme: {
+ 
     screens: {
       '3xl': {'max': '1920px'},
       '2xl': {'max': '1535px'},
@@ -27,6 +28,9 @@ const config: Config = {
     },
     
     extend: {
+      fontFamily: {
+        sans: ['var(--open-sans)']
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
